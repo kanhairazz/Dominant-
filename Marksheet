@@ -1,0 +1,150 @@
+                                                          
+#include <stdio.h>
+
+#include <string.h>
+
+
+
+int main() {
+
+    char student_name[100];
+
+    char father_name[100];
+
+    char mother_name[100];
+
+    char school_name[100];
+
+    int roll_number;
+
+    float marks[5]; // Array to store marks for 5 subjects
+
+    float total = 0, percentage;
+
+    char grade;
+
+    char result[6]; // Declare result outside the conditional blocks
+
+
+
+    printf("Enter the student name: ");
+
+    fgets(student_name, sizeof(student_name), stdin);
+
+
+
+    printf("Enter the father name: ");
+
+    fgets(father_name, sizeof(father_name), stdin);
+
+
+
+    printf("Enter the mother name: ");
+
+    fgets(mother_name, sizeof(mother_name), stdin);
+
+
+
+    printf("Enter the school name: ");
+
+    fgets(school_name, sizeof(school_name), stdin);
+
+
+
+    printf("Enter the roll number: ");
+
+    scanf("%d", &roll_number);
+
+
+
+    printf("Enter the marks for 5 subjects (out of 100):\n");
+
+    for (int i = 0; i < 5; i++) {
+
+        printf("Subject %d: ", i + 1);
+
+        scanf("%f", &marks[i]);
+
+        total += marks[i];
+
+    }
+
+
+
+    // Calculate percentage
+
+    percentage = total / 5;
+
+
+
+    // Determine grade and result
+
+    if (percentage >= 90) {
+
+        grade = 'A';
+
+        strcpy(result, "Pass"); // Copy "Pass" into result
+
+    } else if (percentage >= 75) {
+
+        grade = 'B';
+
+        strcpy(result, "Pass");
+
+    } else if (percentage >= 50) {
+
+        grade = 'C';
+
+        strcpy(result, "Fail");
+
+    } else {
+
+        grade = 'D';
+
+        strcpy(result, "Fail");
+
+    }
+
+
+
+    // Print the marksheet
+
+    printf("\n---- Marksheet for claas 9th student ----\n");
+
+    printf("Student Name: %s", student_name);
+
+    printf("Father Name: %s", father_name);
+
+    printf("Mother Name: %s", mother_name);
+
+    printf("School Name: %s", school_name);
+
+
+
+    printf("Roll Number: %d\n", roll_number);
+
+    printf("Marks:\n");
+
+    for (int i = 0; i < 5; i++) {
+
+        printf("  Subject %d: %.2f\n", i + 1, marks[i]);
+
+    }
+
+    printf("Total Marks: %.2f / 500\n", total);
+
+    printf("Percentage: %.2f%%\n", percentage);
+
+    printf("Result: %s\n", result);
+
+    printf("Grade: %c\n", grade);
+
+
+
+    return 0;
+
+}
+
+
+
+    
